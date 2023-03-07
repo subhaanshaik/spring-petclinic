@@ -1,15 +1,15 @@
 pipeline {
-    agent {label *AAA*}
+    agent {label 'AAA'}
     stages {
-        stage(*vcs*){
+        stage('vcs'){
             steps {
-                git url:  https://github.com/subhaanshaik/spring-petclinic.git
-                    branch: main
+                git url:'https://github.com/subhaanshaik/spring-petclinic.git'
+                    branch:'main'
             }
         }
         stage('package'){
             steps {
-                sh "mvn package"
+                sh 'mvn package'
             }
         }
     }
